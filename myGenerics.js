@@ -11,4 +11,8 @@ printArray([1, 2, 3, 4]);
 function print(num) {
     console.log(num);
 }
-print(1);
+print("1");
+function printBottle(bottle) {
+    console.log(bottle);
+}
+printBottle({ name: "bottle", price: 100 });

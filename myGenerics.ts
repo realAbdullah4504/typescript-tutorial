@@ -14,4 +14,13 @@ function print<Type>(num: Type): void {
 
 print("1");
 
-export {}
+interface Bottle{
+  name:string;
+  price:number;
+}
+function printBottle<Bottle>(bottle:Bottle):void{
+  console.log(bottle)
+}
+printBottle({name:"bottle",price:100})
+
+export {};

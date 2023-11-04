@@ -16,3 +16,21 @@ function printBottle(bottle) {
     console.log(bottle);
 }
 printBottle({ name: "bottle", price: 100 });
+function printArray1(items) {
+    return items[0];
+}
+var printArray2 = function (items) {
+    return items[0];
+};
+//generic classes
+var GenericClass = /** @class */ (function () {
+    function GenericClass(name) {
+        this.name = name;
+    }
+    GenericClass.prototype.print = function () {
+        console.log(this.name);
+    };
+    return GenericClass;
+}());
+var hello = new GenericClass("hello");
+hello.print();

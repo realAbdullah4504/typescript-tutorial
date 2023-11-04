@@ -14,13 +14,41 @@ function print<Type>(num: Type): void {
 
 print("1");
 
-interface Bottle{
-  name:string;
-  price:number;
+interface Bottle {
+  name: string;
+  price: number;
 }
-function printBottle<Bottle>(bottle:Bottle):void{
-  console.log(bottle)
+function printBottle<Bottle>(bottle: Bottle): void {
+  console.log(bottle);
 }
-printBottle({name:"bottle",price:100})
+printBottle({ name: "bottle", price: 100 });
 
+function printArray1<T>(items: T[]): T {
+  return items[0];
+}
+const printArray2 = <T>(items: T[]): T => {
+  return items[0];
+};
+
+//generic classes
+class GenericClass<T> {
+  constructor(public name: T) {}
+  print(): void {
+    console.log(this.name);
+  }
+}
+
+const hello = new GenericClass("hello");
+hello.print();
+
+//generic interfaces
+interface Database {
+  connection: string;
+  name: string;
+  id: number;
+}
+const anotherFunction = <T, U extends Database>(items: T[], value: U): T => {
+  return items[0];
+};
+anotherFunction([1, 2, 3], { connection: "", name: "", id: 0, age: 0 });
 export {};
